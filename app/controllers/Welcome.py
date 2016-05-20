@@ -29,7 +29,7 @@ class Welcome(Controller):
 
     def update(self,id):
         self.models['WelcomeModel'].update(request.form, id)
-        pass
+        return ""
 
     def delete(self,id):
         self.models['WelcomeModel'].delete(id)

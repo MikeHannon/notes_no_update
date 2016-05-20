@@ -33,5 +33,18 @@ $(document).ready(function(){
     );
 
     return false;
+  });
+  $(document).on('keyup', "form.note", function(e){
+    console.log($(this).attr('action'));
+    $.ajax({
+      url:$(this).attr('action'),
+      method:$(this).attr('method'),
+      data:$(this).serialize(), // turn the data into a string that many backends can read (including PHP, python)
+      success: function(data){
+        console.log('update');
+        //data back from the controller
+        // $('#notes').html(data);
+      } // end of function
+    }); // end of ajax
   })
 });
